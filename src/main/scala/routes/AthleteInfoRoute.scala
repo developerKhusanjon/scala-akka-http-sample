@@ -9,4 +9,5 @@ object AthleteInfoRoute {
     (path("get-all-athletes") & get){
       complete()
     }
+
 }

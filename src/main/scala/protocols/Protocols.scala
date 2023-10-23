@@ -1,7 +1,9 @@
 package dev.khusanjon
 package protocols
 
-import domains.Models.{AllAthletesResponse, Response, Athlete}
+import domains.Models.Athlete
+
+import actors.InfoDeskBot.{AllAthletesResponse, Response}
 import spray.json.{DefaultJsonProtocol, RootJsonFormat}
 
 trait Protocols extends DefaultJsonProtocol {

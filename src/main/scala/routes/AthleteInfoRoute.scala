@@ -10,4 +10,19 @@ object AthleteInfoRoute {
       complete()
     }
 
+  pathPrefix("users") {
+    concat(
+      pathEnd {
+        concat(
+          get {
+            complete(getUsers())
+          },
+          post {
+            entity(as[User]) { user =>
+              onSuccess(createUser(user)) { performed =>
+                complete((StatusCodes.Created, performed))
+              }
+            }
+          })
+      }
 }
